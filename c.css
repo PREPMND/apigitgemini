@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+}
+#maind{
+    display: flex;
+}
+/*navw*/
+.navw{
+    display: flex;
+    flex-direction: column;
+}
+.textarea{
+    height: 50;
+    width: 50%;
+    border: 2px solid red;
+}
+form{
+    display: inline-flex;
+}
+/*naq*/
+.navq{
+    display: block;
+    height: 100%;
+    width: 20%;
+    border: 2px solid red;
+    border-radius: 1rem;
+    min-height: 800px;
+    margin-right: 100px;
+    background-color: #555;
+    color: white;
+}
