@@ -10,6 +10,7 @@ body{
 }
 #maind{
     display: flex;
+    background: linear-gradient(to right,#004d1a,#00802b,#004d1a);
 }
 /*navw*/
 .navw{
@@ -18,35 +19,65 @@ body{
 }
 
 .textarea{
-    height: 400px;
-    width: 840px;
-    border: 2px solid red;
+    color: #fff;
+    height: 15rem;
+    width: 34rem;
+    border: 2px solid rgba(233, 255, 239, 0.743);
     margin-top: 120px;
     border-radius: 2vh;
     padding: 20px 20px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
 }
 form{
-    display: inline-flex;
+    display: flex;
     margin-top: 10px;
     height: 50px;
     width: 80px;
     gap: 20px;
 }
+.inp{
+    display: block;
+    
+}
 input{
     padding: 10px 10px;
-    border-radius: 1vh;
+    margin-bottom: 13px;
+    border-radius: 3vh;
+    background: linear-gradient(135deg, #d4fc79, #96e6a1); 
+    color: #073b1a; 
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(150, 230, 161, 0.6); 
+    transition: all 0.3s ease;  
+}
+input:hover{
+    background: linear-gradient(135deg, #c0f57c, #72c481); 
+    box-shadow: 0 6px 14px rgba(114, 196, 129, 0.8);   
 }
 /*naq*/
 .navq{
     display: block;
     height: 100%;
-    width: 20%;
+    width: 240px;
     border: 2px solid #555;
     border-radius: 1rem;
     min-height: 800px;
     margin-right: 100px;
-    background-color: #0c0c07;
-    color: white;
+    background:linear-gradient(135deg, #0f5132, #198754,#14532d);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    color: #fff;
     padding: 25px;
+    text-align: center;
+    user-select: none;
+}
+.submit{
+    width: 120px;
+    font-size: larger;
+    margin-left: 16px;
     text-align: center;
 }
