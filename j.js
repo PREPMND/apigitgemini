@@ -3,7 +3,7 @@ let inptwo=document.querySelector(".inp2");
 let area=document.querySelector(".textarea");
 let submit=document.querySelector(".submit");
 let na_me=document.querySelector(".name");
-let img=document.querySelector(".navq img");
+let img=document.querySelector(".img");
 let url;
 let urlq;
 submit.addEventListener("click",function(dets){
@@ -30,3 +30,34 @@ submit.addEventListener("click",function(dets){
         na_me.innerHTML = "INVALID USERNAME-OR SOMEISSUES";
   });
 });
+
+document.getElementById("geminiSubmit").addEventListener("click", async (dets) => {
+    dets.preventDefault();
+
+    const prompt = document.getElementById("geminiInput").value;
+    const res = await fetch("http://localhost:3000/gemini", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt })
+    });
+
+    const data = await res.json();
+    document.getElementById("geminiResponse").innerText = data.text;
+});
+
+document.getElementById("speakText").addEventListener("click", async () => {
+    const text = document.getElementById("geminiResponse").innerText;
+
+    const res = await fetch("http://localhost:3000/speak", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text })
+    });
+
+    const data = await res.json();
+    const audioPlayer = document.getElementById("audioPlayer");
+    audioPlayer.src = data.audioUrl;
+    audioPlayer.style.display = "block";
+    audioPlayer.play();
+});
+
