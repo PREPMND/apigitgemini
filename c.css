@@ -103,7 +103,7 @@ input:hover{
 .img:hover{
     height: 170px;
     width: 170px;
-    transition: all 0.6s ease;
+    transition: all 0.4s ease;
     box-shadow: 0 6px 14px rgba(5, 5, 237, 0.888);
 }
 .name:hover::after{
