@@ -45,7 +45,8 @@ document.getElementById("geminiSubmit").addEventListener("click", async (dets) =
     document.getElementById("geminiResponse").innerText = data.text;
 });
 
-document.getElementById("speakText").addEventListener("click", async () => {
+document.getElementById("speakText").addEventListener("click", async (dets) => {
+    dets.preventDefault();
     const text = document.getElementById("geminiResponse").innerText;
 
     const res = await fetch("http://localhost:3000/speak", {
@@ -60,4 +61,4 @@ document.getElementById("speakText").addEventListener("click", async () => {
     audioPlayer.style.display = "block";
     audioPlayer.play();
 });
-
+let l=localStorage.setItem("na_me",na_me.innerHTML);
