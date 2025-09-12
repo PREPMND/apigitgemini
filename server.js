@@ -11,19 +11,12 @@ dotenv.config();
 
 const app = express();
 const PORT = 3000;
-
 app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'PREwb')));
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, 'PREwb', 'i.html'));
 });
-
-app.use((req, res, next) => {
-  console.log(`📥 Request received: ${req.method} ${req.url}`);
-  next();
-});
-
 
 app.post("/gemini", async (req, res) => {
     if (!process.env.GEMINI_API_KEY) {
@@ -38,7 +31,6 @@ app.post("/gemini", async (req, res) => {
                 contents: [{ parts: [{ text: prompt }] }]
             })
         });
-
         const result = await response.json();
         const text = result.candidates?.[0]?.content?.parts?.[0]?.text || "No response";
         res.json({ text });
@@ -49,7 +41,6 @@ app.post("/gemini", async (req, res) => {
 app.post("/speak", async (req, res) => {
     const { text } = req.body;
     const client = new textToSpeech.TextToSpeechClient();
-
     const request = {
         input: { text },
         voice: { languageCode: 'en-US', ssmlGender: 'NEUTRAL' },
