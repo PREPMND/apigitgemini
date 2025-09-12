@@ -13,6 +13,10 @@
             <div class="navq">
                 <div class="name"></div>
                 <img class="img" src="" alt="">
+                <div class="history">
+                    <div class="one"></div>
+                    <div class="two"></div>
+                </div>
             </div>
             <div class="navw">
                 <form class="form">
@@ -22,13 +26,16 @@
                     </div>
                     <div class="feature">
                         <div class="gemini-container">
-                            <textarea id="geminiInput" placeholder="Ask Gemini something..."></textarea>
-                            <button id="geminiSubmit">Ask Gemini</button>
-                            <div id="geminiResponse"></div>
+                            <textarea id="geminiInput" placeholder="Ask Gemini "></textarea>
+                            <div class="buttons">
+                                <button id="geminiSubmit">Ask Gemini</button>
+                                <button id="speakText">T-to-S</button>
+                            </div>
+                            
                         </div>
 
                         <div class="tts-container">
-                            <button id="speakText">Speak Last Gemini Response</button>
+                            <div id="geminiResponse"></div>
                             <audio id="audioPlayer" controls style="display:none;"></audio>
                         </div>
                     </div>
