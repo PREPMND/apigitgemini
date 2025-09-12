@@ -127,12 +127,17 @@ input:hover{
     padding: 7px;
     font-family:Roboto;
     font-size: 23px;
+    box-shadow: 0 4px 10px rgba(150, 230, 161, 0.6);
 }
 #geminiInput:hover{
     border-radius: 2vh;
     
     transition: all 0.5s ease ;
 
+}
+#geminiInput:hover::placeholder{
+    color: white;
+    transition: all 0.3s ease ;
 }
 #geminiInput::placeholder{
     color: black;
