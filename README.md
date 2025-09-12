@@ -1,3 +1,4 @@
 # apigitgemini
-**SERVER.JS is the backend file.</br>
-**PREwb is the folder where frontend is!
+USERNAME AND REPOSITORY NAME OF ANY,GIVES README
+SUBMIT DOES THAT!
+ALSO IMAGE CAN SEEN!
