@@ -50,7 +50,7 @@ app.post("/speak", async (req, res) => {
     try {
         const [response] = await client.synthesizeSpeech(request);
         const filePath = path.join(__dirname, 'public', 'output.mp3');
-        await util.promisify(fs.writeFile)(filePath, response.audioContent, 'binary');
+        await fs.promises.writeFile(filePath, Buffer.from(response.audioContent, 'binary')).
         res.json({ audioUrl: "output.mp3" });
     } catch (error) {
         res.status(500).json({ error: "Text-to-Speech failed" });
